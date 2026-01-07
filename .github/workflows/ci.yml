@@ -24,3 +24,9 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Build Docker image
+        run: docker build -t test-image .
+
+      - name: Run tests in Docker
+        run: docker run --rm test-image
